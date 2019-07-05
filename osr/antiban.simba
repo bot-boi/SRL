@@ -19,7 +19,6 @@ Functions of TAntiban:
 .. code-block:: pascal
 
   function  TAntiban.Init(Skills: TIntArray; LogSize:Int32=5): Boolean;
-  function  TAntiban.Init(Skill: Int32; LogSize:Int32=5): Boolean; overload; //simple 1 skill
   function  TAntiban.Copy(): TAntiban; constref;
 
   procedure TAntiban.SetupBiometrics();
@@ -269,11 +268,6 @@ begin
   Self.Endurance := Cos(Self.BioHash*PI/2);
   Self.Patience  := Sin(Self.BioHash*PI/1);
   Self.SetupBiometrics();
-end;
-
-function TAntiban.Init(Skill: Int32; LogSize:Int32=5): Boolean; overload; //simple 1 skill
-begin
-  Self.Init([Skill], LogSize);
 end;
 
 {
